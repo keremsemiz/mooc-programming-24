@@ -5,9 +5,10 @@ while True:
     print(f"The list is now {values}")
     choice = input("a(d)d, (r)emove or e(x)it:")
     if choice == "x":
-        print("Bye")
+        print("Bye!")
         break
     elif choice == "d":
         values.append(val)
     elif choice == "r":
         values.pop()
+    val += 1
