@@ -9,6 +9,7 @@ while True:
         break
     elif choice == "d":
         values.append(val)
+        val += 1
     elif choice == "r":
         values.pop()
-    val += 1
+        val -= 1
