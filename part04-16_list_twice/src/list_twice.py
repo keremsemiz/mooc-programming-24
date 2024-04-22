@@ -5,6 +5,7 @@ while True:
     if item == 0:
         print("Bye!")
         break
+    
     values.append(item)
     print(f"The list now: {values}")
     sortedvals = sorted(values)
