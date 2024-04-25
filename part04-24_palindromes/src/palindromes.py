@@ -1,6 +1,6 @@
 # Write your solution here
-def palindromes(word):
-    return word == word[::-1]
+def palindromes(string):
+    return string == string[::-1]
 
 def main():
      while True:
@@ -9,6 +9,4 @@ def main():
             print(f"{word} is a palindrome!")
             break
         print("that wasn't a palindrome")
-
-if __name__ == "__main__":
-    main()
+main()
