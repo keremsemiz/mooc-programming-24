@@ -1,6 +1,6 @@
 # Write your solution here
 def palindromes(word):
-    return word == word[::-1]:
+    return word == word[::-1]
 
 def main():
      while True:
