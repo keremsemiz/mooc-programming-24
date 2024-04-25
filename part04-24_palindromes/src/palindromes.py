@@ -7,8 +7,8 @@ def main():
         word = input("Please type in a palindrome:")
         if palindromes(word):
             print(f"{word} is a palindrome!")
-        else:
-            print("that wasn't a palindrome")
+            break
+        print("that wasn't a palindrome")
 
 if __name__ == "__main__":
     main()
