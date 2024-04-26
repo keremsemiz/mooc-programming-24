@@ -1,6 +1,6 @@
 # Write your solution here
 def shortest(my_list: list):
-    print("test")
+    return min(my_list, key=len)
 
 
 if __name__ == "__main__":
