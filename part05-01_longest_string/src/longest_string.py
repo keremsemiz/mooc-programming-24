@@ -2,7 +2,7 @@
 def longest(strings: list):
     longest = strings[0]
     for word in strings:
-        if len(word) > lenlongest:
+        if len(word) > len(longest):
             longest = word
     return longest
 
