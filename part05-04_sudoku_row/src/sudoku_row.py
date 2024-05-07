@@ -1,12 +1,15 @@
 # Write your solution here
 def row_correct(sudoku: list, row_no: int):
+    new_list = []
     
-    for i in sudoku[row_no]:
-        ct = sudoku[row_no].count(i)
-        if ct > 1:
+    for i in range(0, 9):
+        sudoku[row_no][i]
+        if sudoku[row_no][i] > 0 and sudoku[row_no][i] in new_list:
             return False
         else:
-            return True
+            new_list.append(sudoku[row_no][i])
+
+    return True
 
 
 if __name__ == "__main__":
@@ -23,4 +26,4 @@ if __name__ == "__main__":
         [3, 0, 0, 0, 0, 0, 0, 0, 2]
         ]
     print(row_correct(sudoku, 0))
-    print(row_correct(sudoku, 1))
+    print(row_correct(sudoku, 4))
