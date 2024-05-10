@@ -1,6 +1,15 @@
 # Write your solution here
-
-
+def block_correct(sudoku: list, row_no: int, column_no: int):
+    nmbs = []
+    
+    for row in range(row_no, row_no + 3):
+        for num in range(column_no, column_no + 3):
+            nber = sudoku[row][num]
+            if nber > 0 and nber in nmbs:
+                return False
+            nmbs.append(nber)
+    return True
+    
 
 if __name__ == "__main__":
     sudoku = [
