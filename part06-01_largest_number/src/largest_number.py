@@ -7,7 +7,7 @@ def largest():
 
     if len(numbers) > 0:
         numbers[0] = max(numbers)
-    print(numbers[0])
+    return(numbers[0])
 
 if __name__ == "__main__":
     largest()
