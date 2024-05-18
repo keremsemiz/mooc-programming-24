@@ -607,3 +607,79 @@ checksum = "2340604c86baff1659158177ee516486"
 [exercises.part05-27_letter_square]
 id = 228778
 checksum = "43f34ab9946666d5c11ccf2e9a584854"
+
+[exercises.part06-01_largest_number]
+id = 228875
+checksum = "128f64f61b34cdeec87708de88a4f9f2"
+
+[exercises.part06-02_fruit_market]
+id = 228872
+checksum = "dc40a9c36ce4038ee8100bf5498661dd"
+
+[exercises.part06-03_matrix]
+id = 228876
+checksum = "4ca789bffb78151c36976c7ef8309757"
+
+[exercises.part06-04_course_grading_part_1]
+id = 228871
+checksum = "f35fad9f23560cad46fa224a80b946bc"
+
+[exercises.part06-05_course_grading_part_2]
+id = 228883
+checksum = "9d66134f9f7115117d8efec795ea30f1"
+
+[exercises.part06-06_course_grading_part_3]
+id = 228881
+checksum = "e65f42cdd26f9a438b783c494644d201"
+
+[exercises.part06-07_spellchecker]
+id = 228889
+checksum = "088b17d99e1c2c5b09593131a9c0d6cd"
+
+[exercises.part06-08_recipe_search]
+id = 228882
+checksum = "4d9a4ab2e3b1b7fe0ceddac2318e05e2"
+
+[exercises.part06-09_city_bikes]
+id = 228885
+checksum = "d40a7c30e1a54b037676efbfd086b130"
+
+[exercises.part06-10_inscription]
+id = 228877
+checksum = "a15aa87ce7179f4985a59b911cc05f1d"
+
+[exercises.part06-11_diary]
+id = 228879
+checksum = "bd775e74ffbf5f33d346ce56b26c47a2"
+
+[exercises.part06-12_filtering_file_contents]
+id = 228887
+checksum = "97ac5cf1169e630c0e03b66f78c58534"
+
+[exercises.part06-13_store_personal_data]
+id = 228880
+checksum = "be9444864d1f253ca7af07eaeca1a204"
+
+[exercises.part06-14_course_grading_part_4]
+id = 228884
+checksum = "f394a67c340097c6605ec49d86ae6076"
+
+[exercises.part06-15_word_search]
+id = 228888
+checksum = "b7de529d75427080d1e9447e7e8d28ea"
+
+[exercises.part06-16_dictionary_file]
+id = 228874
+checksum = "b1440d20b21cfec94412c5eae17671e1"
+
+[exercises.part06-17_read_input]
+id = 228878
+checksum = "9cfa27b8753fb182c9fb0229b67ffb37"
+
+[exercises.part06-18_parameter_validation]
+id = 228886
+checksum = "c4e43deda7163ffa06741f00b3e8abdd"
+
+[exercises.part06-19_incorrect_lottery_numbers]
+id = 228873
+checksum = "7984bd56e31eb50c346535ae400cf098"
