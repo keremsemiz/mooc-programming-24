@@ -4,18 +4,52 @@ def add_student(students: dict, name: str):
     return students
 
 def add_course(students: dict, name: str, coursedata: tuple):
+    test = []
+    list_tuple = []
+
     if students[name] == "no completed courses" or students[name] == "": 
         students[name] = []
     
     students[name].append(tuple(coursedata))
-    print(students)
+    #print(students)
+
+    copy = sorted(students[name])[::-1]
+    #print(copy)
+
+    for key, value in students.items():
+        if value == "": #no value then skip
+            continue
+
+    for subject, grade in copy:
+        if subject not in test and grade > 0:
+            test.append(subject)
+            test.append(grade)
+
+
+    for i in range(len(test)):
+        pair = test[i], test[i + 1]
+        if pair not in list_tuple and i % 2 == 0:
+            list_tuple.append(pair)
+
+
+    students[name] = list_tuple
+
+    return students
+
+
 
 
 def print_student(students: dict, name: str):
+    default = "no completed courses"
+    
     if name not in students:    
         print(f"{name}: no such person in the database")
+    
     else:
-        print(f"{name}:")
+        print(f"{name}")
+        print(f" {len(students[name])} completed courses:")
+
+
 
 
 if __name__ == "__main__":
