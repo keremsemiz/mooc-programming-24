@@ -1,13 +1,18 @@
 # write your solution here
 def totalsum(nums: list):
-    tt = 0
+    tts = 0
     for num in nums:
-        tt += num
+        tts += num
     
-    return tt
+    return tts
 
 def totalmax(nums: list):
-
+    ttm = -10000000000
+    for num in nums:
+        if num > ttm:
+            ttm = num
+    
+    return ttm
 
 def matrix_sum():
     with open("matrix.txt") as matrixfile:
@@ -24,26 +29,30 @@ def matrix_sum():
 
 def matrix_max():   
     with open("matrix.txt") as matrixfile:
-        ttmax = 0
+        ttmax = -10000000000
         for line in matrixfile:
             line = line.replace("\n", "")
             parts = line.split(",")
             nums  = []
             for num in parts:
                 nums.append(int(num))
+            if ttmax < totalmax(nums):
+                ttmax = totalmax(nums)
 
     return ttmax
 
 def row_sums():
-    rwsums = []
     with open("matrix.txt") as matrixfile:
+        ttsums = []
         for line in matrixfile:
             line = line.replace("\n", "")
             parts = line.split(",")
             nums = []
             for num in parts:
                 nums.append(int(num))
-                rwsums.append(sum(nums))
+            ttsums.append(totalsum(nums))
+
+    return ttsums
 
 
 if __name__ =="__main__":
