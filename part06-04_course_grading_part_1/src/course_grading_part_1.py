@@ -1,25 +1,29 @@
 # write your solution here
-studentinp = input("Student information: ")
+student_info = input("Student information: ")
+exercise_data = input("Exercises completed: ")
+
 stddict = {}
 
-with open(studentinp) as new_file:
+with open(student_info) as new_file:
     for line in new_file:
-        parts = line.split(';')
+        parts = line.strip().split(';')
         if parts[0] == 'id':
             continue
         stddict[parts[0]] = (parts[1], parts[2])
 
-exerciseinp = input("Exercises completed: ")
+
 exedict = {}
 
-with open(exerciseinp) as newer_file:
+with open(exercise_data) as newer_file:
     for line in newer_file:
-        parts = line.split(';')
+        parts = line.strip().split(';')
         if parts[0] == 'id':
             continue
-        exedict[parts[0]] = sum(map(int, parts[1:7]))
 
-    
-    for id, name in stddict.items():
-        exercises_total = sum(exedict[id])
-        print(f'{name[0]} {name[1]} {exercises_total}')
+        exedict[parts[0]] = sum(map(int, parts[1:8]))
+
+
+for id, (first, last) in stddict.items():
+    if id in exedict:
+        exercises = exedict[id]
+        print(f"{first} {last} {exercises}")
