@@ -3,7 +3,7 @@ from random import randint
 
 def lottery_numbers(amount: int, lower: int, upper: int):
     nums = []
-    while len(nums) < amount:
+    while len(nums) < a
         pick = randint(lower, upper)
         if pick not in nums:
             nums.append(pick)
