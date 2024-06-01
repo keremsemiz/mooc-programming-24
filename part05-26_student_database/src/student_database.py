@@ -1,56 +1,100 @@
 # Write your solution here
-def add_student(students: dict, name: str):
-    students[name] = ""
-    return students
+def add_student(database: dict, student: str):
+    database[student] = ""
+    return database
 
-def add_course(students: dict, name: str, coursedata: tuple):
+def add_course(database: dict, student: str, course: tuple):
     test = []
-    list_tuple = []
+    final = []
 
-    if students[name] == "no completed courses" or students[name] == "": 
-        students[name] = []
-    
-    students[name].append(tuple(coursedata))
+    if database[student] == "no completed courses" or database[student] == "": 
+        database[student] = []
 
+    database[student].append(tuple(course))
+    copy = sorted(database[student])[::-1]
 
-    copy = sorted(students[name])[::-1]
-
-
-    for key, value in students.items():
+    for key, value in database.items():
         if value == "":
             continue
-
+    
     for subject, grade in copy:
         if subject not in test and grade > 0:
             test.append(subject)
             test.append(grade)
 
-
     for i in range(len(test)):
         pair = test[i], test[i + 1]
-        if pair not in list_tuple and i % 2 == 0:
-            list_tuple.append(pair)
+        if pair not in final and i % 2 == 0:
+            final.append(pair)
+
+    database[student] = final
+
+    return database
 
 
-    students[name] = list_tuple
+def print_student(database: dict, student: str):
+    defaultoutput = "no completed courses"
 
-    return students
+    if student in database:
+        print(f"{student}: ")
+
+        if database[student] == "":
+            database[student] = defaultoutput
+            print(f" {database[student]}")
 
 
+        else:
+            if len(database[student]) > 0:
+                avg = 0
+                print(f" {len(database[student])} completed courses:")
 
+                for key, value in database[student]:
+                    print(f"  {key} {value}")
+                    average += value
 
-def print_student(students: dict, name: str):
-    default = "no completed courses"
-    
-    if name not in students:    
-        print(f"{name}: no such person in the database")
-    
+                if average > 0:
+                    average = average / len(database[student])
+                    print(" average grade", average)
+            else:
+                print(" "+ defaultoutput)
+
     else:
-        print(f"{name}")
-        print(f" {len(students[name])} completed courses:")
+        print(f"{student}: no such person in the database")
+
+    return database
 
 
+def summary(database: dict):
+    totalstudents = 0
+    mostcoursescompleted = 0
+    mostcoursesname = ""
+    bestaverage = 0
+    bestaveragename = ""
+    bestaveragecopy = 0
+    bestaveragenamecopy = ""
 
+    for key, value in database.items():
+        totalstudents += 1
+        if mostcoursescompleted > len(value):
+            mostcoursescompleted = len(value)
+            mostcoursesname = key
+
+
+        for a, b in value:
+            bestaveragecopy += b
+            bestaveragenamecopy = key
+        bestaveragecopy = bestaveragecopy / len(value)
+
+
+        if bestaverage < bestaveragecopy:
+            bestaverage = bestaveragecopy
+            bestaveragename = bestaveragenamecopy
+    
+        bestaveragecopy = 0
+
+    print("students", totalstudents)
+    print("most courses completed", mostcoursescompleted, mostcoursesname)
+    print("best average grade", bestaverage, bestaveragename)
 
 if __name__ == "__main__":
     students = {}
@@ -72,3 +116,4 @@ if __name__ == "__main__":
     add_course(students, "Eliza", ("Introduction to Programming", 5))
     add_course(students, "Eliza", ("Introduction to Computer Science", 4))
     print_student(students, "Peter")
+    summary(students)
