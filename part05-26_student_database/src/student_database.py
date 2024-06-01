@@ -11,13 +11,13 @@ def add_course(students: dict, name: str, coursedata: tuple):
         students[name] = []
     
     students[name].append(tuple(coursedata))
-    #print(students)
+
 
     copy = sorted(students[name])[::-1]
-    #print(copy)
+
 
     for key, value in students.items():
-        if value == "": #no value then skip
+        if value == "":
             continue
 
     for subject, grade in copy:
